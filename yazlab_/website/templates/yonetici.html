@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sayfası</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+</head>
+<body>
+    <a href="{% url 'yonetici_giris' %}"><input id="geri" type="submit" value="Geri" name="submit"></a>
+    <div class="container">
+        
+            <form method="POST" action="{% url 'yonetici' %}">
+                <div class="register">
+                    <table>
+                        {% csrf_token %}
+                    <h1>Kullanıcı Oluştur</h1>
+                    <input id="field" type="text" placeholder="Kullanıcı Adı"name='username'>
+                    <br>
+                    <input id="field" type="password" placeholder="Şifre"name='password'>
+                    <br>
+                    <input id="field" type="text" placeholder="Super User(True False)"name='super_user'>
+                    <br>
+                    <input id="submit" type="submit" value="Kaydet" name="submit">
+                    
+                    
+                    </table>
+                    
+                        
+                 
+                </form>
+                
+                
+                </div>
+                
+            <div class="medya">
+                {% block content %}
+            
+            <ul>
+            <h1>Yüklenen Dosyalar</h1>
+            
+            {% for event in dosyalar %} 
+                {% for medya in event %}
+                <li> <a href="{{medya}}" target="_blank">{{medya}}</a> </li>
+        
+                {% endfor %}
+                
+            {% endfor %}
+            {% endblock content %}
+            
+            
+        
+            </ul>
+    
+       
+            </div>
+            <div class="users">
+                
+            
+                <ul>
+                <h1>Kayıtlı Kullanıcılar</h1>
+                
+                
+                {% for k in kullanıcılar %}
+                {% for l in k %}
+                    
+                    <span id="kullanıcılar">{{l}}</span>
+                    
+                    
+                    {% endfor %}      
+                    <br>
+                {% endfor %}
+                
+
+
+            </div>
+
+             
+            </div>
+            
+            <a href="{% url 'admin_sorgu' %}"><input type="button" value="Sorgu Ekranı" name="dönem"></a>
+            
+    
+</body>
+</html>

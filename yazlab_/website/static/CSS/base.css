@@ -1,0 +1,85 @@
+
+#bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+  
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+  
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  @media screen and (max-width: 1024px) { /* Specific to this particular image */
+    #bg {
+      left: 50%;
+      margin-left: -512px;   /* 50% */
+    }
+  }
+
+
+.flex-container {
+    padding-top: 20rem;
+    display: flex;
+    justify-content: space-evenly;
+    
+  }
+.login{
+    background-color: rgb(78, 62, 152);
+    border-radius: 2rem;
+    
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+
+    width: 300px;           /* Set this to your convenience */
+    height: 200px;          /* Set this to your convenience */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;     /* Half of height */
+    margin-left: -150px;
+}
+
+
+#kullanıcı-adı{
+    background-color: skyblue;  
+    position: relative;
+    height: 2rem;
+    width: 75%;
+    margin-bottom: 2rem;
+
+}
+#şifre{
+    background-color: skyblue;
+    position: relative;
+    height: 2rem;
+    width: 75%;
+    margin-bottom: 2rem;
+}
+#giriş{
+    background-color: rgb(243, 82, 82);
+    position: relative;
+    height: 2rem;
+    width: 10rem;
+    
+}
+#abudu{
+    background-color: rgb(104, 248, 20);
+    position: relative;
+    height: 2rem;
+    width: 10rem;
+}
+.input{
+    position:relative;
+    text-align: center;
+    justify-content: space-between;
+    
+
+}
+::-webkit-input-placeholder {
+    text-align: center;
+  }

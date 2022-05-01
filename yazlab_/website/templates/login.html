@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <img src="https://i.hizliresim.com/8uyda3h.png" id="bg" alt=""> 
+</head>
+<body>
+    
+    <div class="flex-container">
+        <div class="login">
+            
+            <div class="input">
+                
+             
+
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <input id="kullanıcı-adı" type="text" placeholder="Kullanıcı Adınızı Giriniz"name='username'>
+                    <input id="şifre" type="password" placeholder="Şifrenizi Giriniz"name='password'>
+                    <input id="giriş" type="submit" value="Giriş Yap">                    
+                </form>
+               <a href="/yonetici_giris"><input id="abudu" type="submit" value="Admin Girişi"></a> 
+                
+            </div>
+            
+        </div>
+       
+      </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

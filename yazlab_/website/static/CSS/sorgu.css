@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(85, 236, 85);;
+}
+
+.bir{
+    background-color: aliceblue;
+    width: 15%;
+    height: 120px;
+    float: left;
+    overflow-y: auto;
+    list-style: none;
+    
+    
+    }
+.bir>*{
+        text-align:center;
+}
+
+.iki>*{
+        text-align:center;
+}
+.iki{
+        background-color: wheat;
+        width: 10%;
+        height: 120px; 
+        
+        overflow-y: auto;
+        list-style: none;
+    
+}

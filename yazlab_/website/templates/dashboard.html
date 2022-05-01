@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    
+
+<div class="navbar">
+    <div class="title">
+    <h1>Hoşgeldin {{un}}</h1>
+    </div>
+    <div>
+        <a href="{% url 'dashboard' %}"><button id="buton">Ana Sayfa</button></a>
+        <a href="{% url 'upload' %}"><button id="buton">Dosya Yükle</button></a>
+        <a href="{% url 'kullanıcı_sorgu' %}"><button id="buton">Sorgu</button></a>
+        <a href="{% url 'login' %}"><button id="buton">Çıkış Yap</button></a>
+        
+    </div>
+    
+  
+</div>
+<div class="upload">
+    {% block content %}
+    <h1>Yüklenen Dosyalar</h1>
+    <ul>
+    {% for event in filepath %} 
+        {% for medya in event %}
+        <li> <a href="{{medya}}" target="_blank">{{medya}}</a> </li>
+
+        {% endfor %}
+        
+    {% endfor %}
+    
+    {% endblock content %}
+    
+
+    </ul>
+</div>
+
+    
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/yonetici_giris.css' %}">
+    
+</head>
+<body>
+    <h1 id="başlık">ADMİN GİRİŞİ</h1>
+    <a href="{% url 'login' %}"><input id="geri" type="submit" value="Geri" name="submit"></a>
+    <div class="flex-container">
+        <div class="login">
+            
+            <div class="input">
+                
+             
+
+                <form method="POST" action="{% url 'yonetici_giris' %}">
+                    {% csrf_token %}
+                    <input id="kullanıcı-adı" type="text" placeholder="Kullanıcı Adınızı Giriniz"name='username'>
+                    <input id="şifre" type="password" placeholder="Şifrenizi Giriniz"name='password'>
+                    <a href="/yonetici"><input id="abudu" type="submit" value="Giriş"></a>                     
+                </form>
+               
+                
+            </div>
+            
+        </div>
+       
+      </div>
+</body>
+</html>

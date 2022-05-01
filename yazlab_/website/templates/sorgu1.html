@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genel Sorgu Ekranı</title>
+   
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/sorgu1.css' %}">
+
+</head>
+<body>
+    <h1>Sorgu Ekranı</h1>
+    
+    <a href="{% url 'admin_sorgu' %}"><input id="submit" type="button" value="Geri" name="submit"></a>
+   
+      
+        
+        <br>
+
+    <div class="sorgu1">
+            <h2>DÖNEM SORGUSU</h2>
+            
+    
+        
+    
+    <form method="post" action="{% url 'sorgu1' %}">
+        {% csrf_token %}
+        <select name="dönem">
+
+            <option value="2012-2013 Güz">2012-2013 Güz</option>
+            <option value="2012-2013 Bahar">2012-2013 Bahar</option>
+
+            <option value="2013-2014 Güz">2013-2014 Güz</option>
+            <option value="2013-2014 Bahar">2013-2014 Bahar</option>
+
+            <option value="2013-2014 Güz">2013-2014 Güz</option>
+            <option value="2013-2014 Bahar">2013-2014 Bahar</option>
+        
+            <option value="2015-2016 Güz">2015-2016 Güz</option>
+            <option value="2015-2016 Bahar">2015-2016 Bahar</option>
+
+            <option value="2016-2017 Güz">2016-2017 Güz</option>
+            <option value="2016-2017 Bahar">2016-2017 Bahar</option>
+
+            <option value="2017-2018 Güz">2017-2018 Güz</option>
+            <option value="2017-2018 Bahar">2017-2018 Bahar</option>
+
+            <option value="2018-2019 Güz">2018-2019 Güz</option>
+            <option value="2018-2019 Bahar">2018-2019 Bahar</option>
+
+            <option value="2019-2020 Güz">2019-2020 Güz</option>
+            <option value="2019-2020 Bahar">2019-2020 Bahar</option>
+            
+            <option value="2020-2021 Güz">2020-2021 Güz</option>
+            <option value="2020-2021 Bahar">2020-2021 Bahar</option>
+
+        </select>
+        <input id="submit" type="submit" value="Sorgula" name="submit">
+    </form>
+    
+    
+        <div class="bir">
+        {% for i in dosyalar %} 
+
+        <li> <a  href="{{i}}" target="_blank">{{i}}</a> </li>
+
+        {% endfor %}
+        
+        </div>
+        
+
+    </div>
+    
+    <div class="sorgu2">
+        
+        <h2>YAZAR SORGUSU</h2>
+        
+
+    
+
+<form method="post" action="{% url 'sorgu1' %}">
+    {% csrf_token %}
+    <select name="yazar">
+        {% for i in yazarlar %} 
+        <option value="{{i}}">{{i}}</option>
+
+        {% endfor %}
+        
+    </select>
+    <input id="submit" type="submit" value="Sorgula" name="submit">
+</form>
+
+
+    <div class="bir">
+     {% for i in yazar_dosya_listesi %} 
+
+    <li> <a  href="{{i}}" target="_blank">{{i}}</a> </li>
+
+    {% endfor %} 
+    
+    </div>
+
+
+</div>
+
+<div class="sorgu2">
+    <h2>DERS SORGUSU</h2>
+    
+
+
+
+<form method="post" action="{% url 'sorgu1' %}">
+{% csrf_token %}
+<select name="ders">
+
+    <option value="ARAŞTIRMA PROBLEMLERİ">ARAŞTIRMA PROBLEMLERİ</option>
+    <option value="BİTİRME PROJESİ">BİTİRME PROJESİ</option>
+
+    
+
+
+</select>
+<input id="submit" type="submit" value="Sorgula" name="submit">
+</form>
+
+
+<div class="bir">
+{% for i in ders_adı %} 
+
+<li> <a  href="{{i}}" target="_blank">{{i}}</a> </li>
+
+{% endfor %} 
+
+</div>
+
+
+</div>
+
+<div class="sorgu2">
+    <h2>PROJE ADI SORGUSU</h2>
+    
+
+
+
+<form method="post" action="{% url 'sorgu1' %}">
+{% csrf_token %}
+<select name="proje_adı">
+    {% for i in proje_başlıkları %} 
+    <option value="{{i}}">{{i}}</option>
+
+    {% endfor %}
+    
+</select>
+<input id="submit" type="submit" value="Sorgula" name="submit">
+</form>
+
+
+<div class="bir">
+{% for i in proje_başlığı %} 
+
+<li> <a  href="{{i}}" target="_blank">{{i}}</a> </li>
+
+{% endfor %} 
+
+</div>
+
+
+</div>
+
+<div class="sorgu2">
+    <h2>ANAHTAR KELİME SORGUSU</h2>
+    
+
+
+
+<form method="post" action="{% url 'sorgu1' %}">
+{% csrf_token %}
+<select name="anahtar_kelime">
+    {% for i in anahtar_kelimeler %} 
+    <option value="{{i}}">{{i}}</option>
+
+    {% endfor %}
+    
+</select>
+<input id="submit" type="submit" value="Sorgula" name="submit">
+</form>
+
+
+
+<div class="bir">
+ {% for i in anahtar_kelimeler_dosya %} 
+
+<li> <a  href="{{i}}" target="_blank">{{i}}</a> </li>
+
+{% endfor %} 
+
+</div>
+
+
+</div>
+
+
+        
+    </div>
+    
+    <div>
+        
+    
+        
+    
+    
+    
+
+</body>
+</html>

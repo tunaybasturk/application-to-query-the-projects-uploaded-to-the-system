@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+.sorgular{
+    display: flex;
+    justify-content:space-between;
+    padding-right: 5%;
+    
+}
+
+body{
+    background-color: rgb(247, 55, 183);
+}
+
+
+.bir{
+    background-color: aliceblue;
+    width: 100%;
+    height: 120px;
+    float: left;
+    overflow-y: auto;
+    list-style: none;
+    
+    
+}
+
+
+
+    .bir>*{
+        text-align:center;
+    }
+ 
